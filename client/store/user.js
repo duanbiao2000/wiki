@@ -2,6 +2,7 @@ import { make } from 'vuex-pathify'
 import jwt from 'jsonwebtoken'
 import Cookies from 'js-cookie'
 
+// 定义state，包含用户信息
 const state = {
   id: 0,
   email: '',
@@ -22,6 +23,7 @@ export default {
   namespaced: true,
   state,
   mutations: {
+    // 使用vuex-pathify生成mutations
     ...make.mutations(state),
     REFRESH_AUTH(st) {
       const jwtCookie = Cookies.get('jwt')
